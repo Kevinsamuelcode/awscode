@@ -4,8 +4,7 @@
 	<title>Add Employee Information</title>
 	<style>
 		body {
-			background-color: #F2F2F2;
-			font-family: avenir;
+			background-color: #f2f2f2; /* Set a brighter background color */
 		}
 
 		h1 {
@@ -13,16 +12,12 @@
 		}
 
 		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 50px;
-		}
-
-		label {
-			font-size: 14pt;
-			color: grey;
-			margin-bottom: 10px;
+			margin: 20px auto; /* Center the form */
+			max-width: 400px;
+			padding: 20px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 		}
 
 		input[type="number"],
@@ -31,57 +26,45 @@
 			height: 25px;
 			font-size: 14pt;
 			color: grey;
-			width: 300px;
 			margin-bottom: 10px;
-			padding: 5px;
-			border: none;
-			border-radius: 5px;
+			width: 100%;
 		}
 
 		button {
-			background: #2196F3;
+			background: grey;
 			height: 45px;
 			width: 200px;
 			color: white;
 			font-style: oblique;
 			border: none;
-			margin-bottom: 10px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-
-		button:hover {
-			background: #1976D2;
+			margin-top: 10px;
 		}
 
 		a {
 			color: DodgerBlue;
 			text-decoration: none;
-			font-size: 14pt;
-			margin-top: 20px;
 		}
+
 	</style>
 </head>
 <body>
-	<center>
-		<h1>Employee Database</h1>
-		<form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
-			<button type="submit" formaction="/getemp">GET EMPLOYEE INFORMATION</button>
-			<label for="emp_id">Employee ID:</label>
-			<input type="number" id="emp_id" name="emp_id" autofocus required>
-			<label for="first_name">First Name:</label>
-			<input type="text" id="first_name" name="first_name" required>
-			<label for="last_name">Last Name:</label>
-			<input type="text" id="last_name" name="last_name" required>
-			<label for="email">Email ID:</label>
-			<input type="text" id="email" name="email" required>
-			<label for="location">Location:</label>
-			<input type="text" id="location" name="location" required>
-			<label for="emp_image_file">Image:</label>
-			<input type="file" id="emp_image_file" name="emp_image_file">
-			<button type="submit">UPDATE DATABASE</button>
-		</form>
-		<a href="/about">About Us</a>
-	</center>
+	<h1>Employee Database</h1>
+	<form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
+		<button type="submit" formaction="/getemp">GET EMPLOYEE INFORMATION</button>
+		<br><br>
+		Employee ID:<br>
+		<input type="number" name="emp_id" autofocus required><br><br>
+		First Name:<br>
+		<input type="text" name="first_name" required><br><br>
+		Last Name:<br>
+		<input type="text" name="last_name" required><br><br>
+		Primary Skills:<br>
+		<input type="text" name="pri_skill" required><br><br>
+		Location:<br>
+		<input type="text" name="location" required><br><br>
+		Image: <input type="file" name="emp_image_file"><br><br>
+		<button type="submit">UPDATE DATABASE</button>
+	</form>
+	<a href="/about">About Us</a>
 </body>
 </html>
